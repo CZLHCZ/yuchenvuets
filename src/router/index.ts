@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
-import Home from "../views/Home.vue";
+import Home from "../views/home/home.vue";
 import Login from "../views/Login.vue";
 import { component } from 'vue/types/umd';
 
