@@ -1,6 +1,7 @@
 <template>
   <div class="home-wrpa">
     <h2>首页</h2>
+    <router-view />
   </div>
 </template>
 

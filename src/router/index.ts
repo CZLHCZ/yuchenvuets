@@ -4,14 +4,31 @@ import Home from "../views/home/home.vue";
 import Login from "../views/Login.vue";
 import { component } from 'vue/types/umd';
 
+/**
+ * 重写路由的push方法
+ */
+// const routerPush = VueRouter.prototype.push
+// VueRouter.prototype.push = function push(location: RouteConfig) {
+//   return (<any>(routerPush.call(this, location))).catch((error: any)=> error)
+// }
 
 Vue.use(VueRouter);
 
-const routes: Array<RouteConfig> = [
+const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
+    meta: {
+      name:'首页'
+    },
+    children: [
+      {
+        path: '/headerNav',
+        name: '导航',
+        component: () => import('@/components/headerNav/headerNav.vue')
+      }
+    ]
   },
   {
     path:'/login',
