@@ -8,7 +8,7 @@ module.exports = {
   // eslint-loader 是否在保存的时候检查
   lintOnSave: false,
   // webpack配置
-  // see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
+  // 参考 https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
   chainWebpack: config => {
     // 关于打包后包资源各部分占比的配置相关
     // config
@@ -28,6 +28,12 @@ module.exports = {
         ]
       };
     }
+    config.externals={
+      'echarts': 'echarts' // 配置使用CDN
+    }
+    // externals: {
+    //   'echarts': 'echarts' // 配置使用CDN
+    // }
   },
   // 生产环境是否生成 sourceMap 文件
   productionSourceMap: false,
